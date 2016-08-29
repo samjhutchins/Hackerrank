@@ -1,2 +1,2 @@
 # Hackerrank
-Problems solved on Hackerrank
+Problems solved on Hackerrank (for exact problem detains reference Hackerrank problems of the same name)
