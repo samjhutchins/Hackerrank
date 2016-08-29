@@ -1,0 +1,18 @@
+import sys
+n = int(sys.stdin.readline())
+mina = 0
+minb = 0
+for x in range(0,n):
+    a,b = list(map(int,sys.stdin.readline().split()))
+    
+    if mina > 0:
+        mina = min(a,mina)
+    else:
+        mina = a
+    
+    if minb > 0:
+        minb = min(b,minb)
+    else:
+        minb = b
+
+print(mina*minb)
