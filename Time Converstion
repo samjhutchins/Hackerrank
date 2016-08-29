@@ -1,0 +1,33 @@
+#!/bin/python3
+
+import sys
+
+
+time = input().strip()
+
+
+a = time.split(':')
+
+
+if str(time[8:10]) == 'PM':
+    
+    if int(time[0:2]) < 12:
+        c = int(a[0]) + 12
+        b = time[6:8]
+        print(str(c)+':' + str(time[3:5])+ ':' + str(b))
+    
+    if int(time[0:2]) == 12:
+        c = a[0]
+        b = time[6:8]
+        print(str(c)+':' + str(time[3:5])+ ':' + str(b))
+        
+if str(time[8:10]) == 'AM':
+    if int(time[0:2]) < 12:    
+        c = a[0]
+        b = time[6:8]
+        print(str(c)+':' + str(time[3:5])+ ':' + str(b))
+        
+    if int(time[0:2]) == 12:
+        c = '00'
+        b = time[6:8]
+        print(str(c)+':' + str(time[3:5])+ ':' + str(b))
