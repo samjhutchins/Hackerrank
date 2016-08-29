@@ -1,0 +1,20 @@
+#!/bin/python3
+
+import sys
+
+
+n = int(input().strip())
+arr = [int(arr_temp) for arr_temp in input().strip().split(' ')]
+
+m = n 
+x = []
+while m != 0:
+    m -= 1
+    x.append(arr[m])
+    
+x = str(x).strip('[]')
+x = str(x).replace(',','')
+print(x)
+    
+
+    
