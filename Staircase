@@ -1,0 +1,13 @@
+#!/bin/python3
+
+import sys
+
+
+n = int(input().strip())
+m = 0
+
+
+while n > 0:
+    m += 1
+    n -= 1
+    print(' '*(n)+  '#'*(m))
