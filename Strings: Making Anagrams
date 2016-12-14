@@ -1,0 +1,53 @@
+def main():
+
+    a = input().strip()
+    b = input().strip()
+    
+    A = list(a)
+    len_a = len(a)
+    B = list(b)
+    len_b = len(b)
+    
+    dict_a = {}
+    dict_b = {}
+    
+    ad = create_dict(A,dict_a)
+    bd = create_dict(B,dict_b)
+    compare_dictionaries(ad,bd)
+    
+def create_dict(X,same_char):
+    for x in X:
+        count = X.count(x)
+        same_char[x] = count
+        
+    return(same_char)
+
+def compare_dictionaries(A,B):
+    
+    a_keys = set(A.keys())
+    b_keys = set(B.keys())
+    b_removed = a_keys - b_keys
+    a_removed = b_keys - a_keys
+    count = 0
+    
+    def count_(X,removed,count):
+        for x in X:
+            if x in removed:
+
+                count += int(X[x])
+        return(count)
+    a_count = count_(A,b_removed,count)
+    tot_count = count_(B,a_removed,a_count)
+    
+    
+    intersect = a_keys.intersection(b_keys)
+
+    
+    for x in intersect:
+        difference = abs(A[x]-B[x])
+        
+        tot_count+= difference
+    
+    print(tot_count)
+    
+main()   
